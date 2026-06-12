@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Инфопузырь: симулятор алгоритмической радикализации</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <div class="header">
+        <h1>Инфопузырь · Алгоритмическая петля</h1>
+        <div class="stats">
+            <span>лайков: <span id="likeCount">0</span></span>
+            <span>радикальность: <span id="radicalLevel">0</span>%</span>
+        </div>
+    </div>
+
+    <div class="interests-panel">
+        <div class="section-title">1. Выберите исходные интересы (алгоритм усилит их)</div>
+        <div class="chips" id="interestsContainer">
+            <div data-topic="f1" class="chip">Формула-1</div>
+            <div data-topic="eurovision" class="chip">Евровидение</div>
+            <div data-topic="esports" class="chip">Киберспорт (CS2/Dota)</div>
+        </div>
+        <div style="font-size: 0.7rem; margin-top: 12px; color:#7e8aa2;">Лайкайте новости → алгоритм подсовывает похожие и радикальные версии</div>
+    </div>
+
+    <div class="toolbar">
+        <div>
+            <button id="burstBubbleBtn" class="warning">Лопнуть пузырь</button>
+            <button id="randomEventBtn" class="primary">Случайное событие</button>
+            <button id="resetBtn" class="danger">Сброс всего</button>
+        </div>
+        <div>
+            <button id="compareModeBtn" class="success">Сравнить с соседом (клон)</button>
+        </div>
+    </div>
+
+    <div class="split-view">
+        <div class="news-feed">
+            <div class="section-title">Лента рекомендаций (алгоритм активен)</div>
+            <div id="newsList"></div>
+        </div>
+
+        <div class="comparison">
+            <div class="section-title">Ваш информационный пузырь</div>
+            <div class="bubble-metrics">
+                <div>Доминирующая тема: <strong id="dominantTopic">—</strong></div>
+                <div>Однородность ленты: <span id="homogeneity">0</span>%</div>
+                <div class="progress-bar"><div class="progress-fill" id="homogeneityFill"></div></div>
+                <div>Экстремальность контента: <span id="extremism">0</span>%</div>
+                <div class="progress-bar"><div class="progress-fill" id="extremismFill" style="background:#f97316;"></div></div>
+            </div>
+            <div id="comparePanel">
+                <div class="section-title">Режим сравнения</div>
+                <div id="compareInfo">Нажмите "Сравнить с соседом", чтобы создать второго пользователя с теми же интересами. Лайкайте, а потом смотрите расхождение лент.</div>
+                <div id="comparisonStats" style="display: none; margin-top: 15px;"></div>
+            </div>
+            <div class="event-gen">
+                <div class="section-title">Генератор случайных событий</div>
+                <div style="font-size:0.8rem">Внешние шоки, которые могут временно сломать пузырь или добавить хаоса.</div>
+                <button id="genEventBtn" style="margin-top: 10px; width:100%">Случайное мировое событие</button>
+                <div id="lastEventMsg" style="margin-top: 8px; font-size:0.7rem; color:#facc15;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">
+        Скрытый алгоритм: лайки увеличивают вес темы, алгоритм показывает новости с похожей и более радикальной позицией. Пузырь усиливается.
+    </div>
+</div>
+
+<script src="ит3.js"></script>
+</body>
+</html>
